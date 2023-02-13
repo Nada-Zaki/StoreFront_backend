@@ -8,7 +8,6 @@ These are the notes from a meeting with the frontend developer that describe wha
 - Index: 'products/' [GET]
 - Show: 'products/:id' [GET]
 - Create [token required]: 'products/' [POST]
-- [OPTIONAL] Top 5 most popular products: 'dashboard/popular-products' [GET]
 - [OPTIONAL] Products by category (args: product category): 'products/category/:category [GET]
 - Update [token required]: 'products/:id' [PUT]
 - Delete [token required]: 'products/:id' [DELETE]
@@ -23,14 +22,17 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 
 #### Orders
-- Current Order by user (args: user id)[token required]: 'dashboard/active-orders' [POST]
-- [OPTIONAL] Completed Orders by user (args: user id)[token required]: 'dashboard/completed-orders' [POST]
 - Index: 'orders/' [GET]
 - Show: 'orders/:id' [GET]
 - Create [token required]: 'orders/' [POST]
 - Add products [token required]: '/orders/:id/products' [POST]
 - Update [token required]: 'orders/:id' [PUT]
 - Delete [token required]: 'orders/:id' [DELETE]
+
+#### Dashboard
+ - [OPTIONAL] Top 5 most popular products: 'dashboard/popular-products' [GET]
+ - Current Order by user (args: user id)[token required]: 'dashboard/active-orders' [POST]
+ - [OPTIONAL] Completed Orders by user (args: user id)[token required]: 'dashboard/completed-orders' [POST]
 
 ## Data Shapes
 #### Product
@@ -52,8 +54,8 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 #### Order_products
 - id: SERIAL PRIMARY KEY
-- id of the order: BIGINT[FOREIGN KEY FOR ORDERS TABLE]
-- id of each product in the order: BIGINT[FOREIGN KEY FOR PRODUCTS TABLE]
-- quantity of each product in the order: INTEGER
+- order_id: BIGINT[FOREIGN KEY FOR ORDERS TABLE]
+- product_id: BIGINT[FOREIGN KEY FOR PRODUCTS TABLE]
+- quantity: INTEGER
 
 
