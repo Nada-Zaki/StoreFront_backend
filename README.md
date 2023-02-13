@@ -9,7 +9,7 @@
 * The database is running on port 5432.
 * The backend server is running on port 3000.
 
-* In package.json, there are 7 scripts for the dependencies:
+* In package.json, there are 6 scripts for the dependencies:
   - **prettier:** to format the code by the rules configured in the .prettierrc file.
   - **lint:** to run eslint dependency.
   - **dev:** to run typescript code with nodemon.
